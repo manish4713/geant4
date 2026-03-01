@@ -31,3 +31,6 @@ _site
 *.bz2
 *.root
 .Trash*
+
+datasets/
+.vscode/
