@@ -1,0 +1,17 @@
+/control/verbose 1
+
+# Load geometry
+/geometry/source SCDMS.tg
+/run/initialize
+
+# Offscreen renderer (no X11 required)
+/vis/open TSG_OFFSCREEN
+/vis/drawVolume
+
+/vis/viewer/set/lineSegmentsPerCircle 200
+/vis/viewer/set/style wireframe
+/vis/viewer/set/viewpointThetaPhi 80 20
+/vis/viewer/zoom 6
+
+/vis/viewer/flush
+/vis/viewer/refresh

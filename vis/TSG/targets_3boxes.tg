@@ -1,0 +1,24 @@
+:rotm r000 0 0 0
+
+:solid World BOX 150*cm 150*cm 150*cm
+:volu world World G4_AIR
+:vis world OFF
+
+:solid WaterBox BOX 50*cm 50*cm 50*cm
+:volu waterVol WaterBox G4_WATER
+:color waterVol 0.1 0.3 1.0 0.15
+:place waterVol 0 world r000 0 0 0
+
+:solid LeadBox BOX 30*cm 30*cm 30*cm
+:volu leadVol LeadBox G4_Pb
+:color leadVol 0.5 0.5 0.5 0.30
+:place leadVol 0 waterVol r000 0 0 0
+
+:solid InnerBox BOX 10*cm 10*cm 10*cm
+:volu innerVol InnerBox G4_Si
+:color innerVol 1.0 0.0 0.0 0.90
+:place innerVol 0 leadVol r000 0 0 0
+
+:vis waterVol ON
+:vis leadVol ON
+:vis innerVol ON

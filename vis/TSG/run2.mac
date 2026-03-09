@@ -1,0 +1,176 @@
+/control/macroPath .
+/geometry/source targets_3boxes.tg
+
+/control/verbose 1
+/process/em/verbose 0
+/process/had/verbose 0
+
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 2
+
+/control/execute view.vis
+
+/gps/direction 1 0 0
+
+
+/gps/position -120 0 0 cm
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 keV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save air_1keV.png
+
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 MeV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save air_1MeV.png
+
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 GeV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save air_1GeV.png
+
+
+/gps/position -30 0 0 cm
+
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 keV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save water_1keV.png
+
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 MeV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save water_1MeV.png
+
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 GeV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save water_1GeV.png
+
+
+
+/gps/position 30 0 0 cm
+
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 keV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save lead_1keV.png
+
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 MeV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save lead_1MeV.png
+
+
+/vis/scene/endOfEventAction accumulate 0
+/vis/scene/endOfEventAction accumulate 999999
+/gps/energy 1 GeV
+
+/gps/particle alpha
+/run/beamOn 10
+/gps/particle e-
+/run/beamOn 10
+/gps/particle gamma
+/run/beamOn 10
+/gps/particle neutron
+/run/beamOn 10
+
+/vis/viewer/refresh
+/vis/viewer/save lead_1GeV.png

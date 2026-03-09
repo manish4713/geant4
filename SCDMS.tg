@@ -1,0 +1,61 @@
+// SCDMS.tg (GEARS-safe: no math in :p lines)
+
+:p W 600
+
+:p CAN_R 200
+:p CAN_T 3
+:p CAN_H 400
+
+:p CUP_R 60
+:p CUP_T 3
+:p CUP_H 40
+:p CUP_B 5
+
+:p DET_R 38
+:p DET_H 12.5
+:p DEAD_T 1.0
+
+:p CUP_Z 0
+:p DET_Z 0
+
+// Precomputed (no expressions)
+:p CUP_HH 20
+:p BOT_Z -17.5
+
+:rotm r000 0 0 0
+
+:solid WorldBox BOX $W $W $W
+:volu  world    WorldBox G4_Galactic
+:vis   world OFF
+
+:solid CanOuter   TUBE 0      $CAN_R        $CAN_H
+:solid CanInner   TUBE 0      $CAN_R-$CAN_T $CAN_H-$CAN_T
+:solid Cryostat   SUBTRACTION CanOuter CanInner r000 0 0 0
+:volu  cryoVol    Cryostat G4_STAINLESS-STEEL
+:place cryoVol 0  world r000 0 0 0
+
+:solid CupOuter  TUBE 0          $CUP_R          $CUP_HH
+:solid CupInner  TUBE 0          $CUP_R-$CUP_T   $CUP_HH
+:solid CupWall   SUBTRACTION CupOuter CupInner r000 0 0 0
+
+:solid CupBottom TUBE 0          $CUP_R          2.5
+:solid CupHousing UNION CupWall CupBottom r000 0 0 $BOT_Z
+
+:volu cupVol CupHousing G4_Cu
+:place cupVol 0 cryoVol r000 0 0 $CUP_Z
+
+:solid DeadOuter  TUBE 0               $DET_R             $DET_H
+:solid DeadInner  TUBE 0               $DET_R-$DEAD_T     $DET_H
+:solid DeadShell  SUBTRACTION DeadOuter DeadInner r000 0 0 0
+:volu  deadVol    DeadShell G4_Ge
+
+:solid ActiveGe   TUBE 0               $DET_R-$DEAD_T     $DET_H
+:volu  geVol      ActiveGe G4_Ge
+
+:place deadVol 0 cupVol r000 0 0 $DET_Z
+:place geVol   0 deadVol r000 0 0 0
+
+:color cryoVol  0.7 0.7 0.7
+:color cupVol   0.9 0.4 0.1
+:color deadVol  1.0 0.0 0.0
+:color geVol    0.2 0.6 1.0
